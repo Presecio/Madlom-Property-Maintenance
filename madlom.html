@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madlom Property Maintenance | Melbourne West & North</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --dark: #1a1a1a;
+    --panel: #1f1f1f;
+    --gold: #c9a84c;
+    --gold-light: #e8c878;
+    --gold-dim: #8a6d2e;
+    --white: #f5f3ef;
+    --grey: #9a9690;
+    --light-grey: #d4d0cb;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+
+  .nav-logo span { color: var(--white); }
+
+  nav ul {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  nav ul a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 10px 24px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 48px 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.02) 80px,
+        rgba(201,168,76,0.02) 81px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.02) 80px,
+        rgba(201,168,76,0.02) 81px
+      );
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--grey);
+    max-width: 520px;
+    margin-bottom: 44px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 15px 36px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 15px 36px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 48px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 2;
+  }
+
+  .stat {
+    text-align: right;
+    border-right: 2px solid var(--gold);
+    padding-right: 20px;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 500;
+  }
+
+  /* ── DIVIDER ── */
+  .gold-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 100px 48px; }
+
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .section-body {
+    color: var(--grey);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--off-black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-logo-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 64px;
+    position: relative;
+  }
+
+  .about-logo-block::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px;
+    right: -12px; bottom: -12px;
+    border: 1px solid rgba(201,168,76,0.1);
+    pointer-events: none;
+  }
+
+  .logo-svg {
+    width: 200px;
+    height: auto;
+  }
+
+  .about-points {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: var(--light-grey);
+  }
+
+  .about-point::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--black); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--panel);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    border-top: 2px solid transparent;
+  }
+
+  .service-card:hover {
+    background: #252525;
+    border-top-color: var(--gold);
+  }
+
+  .service-card:hover .service-icon { color: var(--gold); }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--gold-dim);
+    transition: color 0.3s;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--grey);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── AREAS ── */
+  .areas {
+    background: var(--off-black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .area-tags {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .area-tag {
+    background: var(--dark);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--light-grey);
+    padding: 8px 18px;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  .map-placeholder {
+    background: var(--dark);
+    border: 1px solid rgba(201,168,76,0.15);
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-placeholder svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+  }
+
+  .map-center-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .map-center-text .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .map-center-text .small {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 500;
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-section {
+    background: var(--black);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-section::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28rem;
+    color: rgba(201,168,76,0.04);
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonial-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  blockquote {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    line-height: 1.75;
+    font-weight: 300;
+    color: var(--light-grey);
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+
+  blockquote strong {
+    color: var(--white);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: var(--black);
+  }
+
+  .author-info .name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .author-info .location {
+    font-size: 0.8rem;
+    color: var(--grey);
+    font-weight: 300;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+  }
+
+  /* ── WHY US ── */
+  .why {
+    background: var(--off-black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .why-item {
+    background: var(--panel);
+    padding: 32px 24px;
+  }
+
+  .why-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: rgba(201,168,76,0.25);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .why-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .why-text {
+    font-size: 0.85rem;
+    color: var(--grey);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── QUOTE FORM ── */
+  .quote-section {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .quote-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .quote-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--panel);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 14px 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--grey); }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { height: 130px; resize: vertical; }
+
+  .form-group select option { background: var(--panel); }
+
+  .services-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--light-grey);
+    font-weight: 300;
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold);
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .form-submit {
+    text-align: center;
+    margin-top: 36px;
+  }
+
+  .btn-submit {
+    background: var(--gold);
+    color: var(--black);
+    padding: 18px 64px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .btn-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .form-note {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--grey);
+    font-weight: 300;
+  }
+
+  /* ── CONTACT STRIP ── */
+  .contact-strip {
+    background: var(--gold);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .contact-strip-left {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--black);
+    letter-spacing: 0.05em;
+  }
+
+  .contact-details {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-item .c-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 2px;
+  }
+
+  .contact-item .c-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .contact-item .c-value:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--off-black);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--grey);
+    font-weight: 300;
+  }
+
+  /* ── SUCCESS MESSAGE ── */
+  .success-msg {
+    display: none;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--gold);
+    padding: 24px;
+    text-align: center;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    margin-top: 24px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-inner > * {
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-tag { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero-sub { animation-delay: 0.4s; }
+  .hero-actions { animation-delay: 0.55s; }
+  .hero-stats { animation: fadeUp 0.8s 0.7s ease both; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    nav ul { display: none; }
+
+    section { padding: 72px 24px; }
+    .hero { padding: 120px 24px 72px; }
+
+    .about, .areas, .why { grid-template-columns: 1fr; gap: 40px; }
+
+    .services-grid { grid-template-columns: 1fr 1fr; }
+
+    .hero-stats {
+      position: static;
+      flex-direction: row;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .stat { text-align: left; border-right: none; padding-right: 0; border-left: 2px solid var(--gold); padding-left: 14px; }
+
+    .form-grid { grid-template-columns: 1fr; }
+
+    .services-checkboxes { grid-template-columns: 1fr 1fr; }
+
+    .contact-strip { padding: 32px 24px; }
+    .contact-strip-left { font-size: 1.4rem; }
+
+    footer { padding: 24px; }
+
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-checkboxes { grid-template-columns: 1fr; }
+    .contact-details { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MADLOM <span>PROPERTY</span></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Melbourne's Trusted Tradesmen</div>
+    <h1>YOUR HOME.<br><em>DONE RIGHT.</em></h1>
+    <p class="hero-sub">From bathroom renovations to plaster repairs, painting and carpentry — Madlom Property Maintenance handles it all across Melbourne's west and north.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:0404577361" class="btn-secondary">Call 0404 577 361</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Services Offered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Suburbs Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Satisfaction Focus</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">What We Do</div>
+      <div class="section-title">FULL PROPERTY<br><em>MAINTENANCE</em></div>
+    </div>
+    <p class="section-body">One call handles it all. No job is too small — we take care of homes, apartments and real estate properties across Melbourne.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🚿</span>
+      <div class="service-name">Bathroom Renovations</div>
+      <p class="service-desc">Full ensuite and bathroom renos — tiling, fixtures, waterproofing and finishing to a professional standard.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🖌️</span>
+      <div class="service-name">Painting</div>
+      <p class="service-desc">Interior house and apartment repaints. Clean lines, quality finishes, minimal disruption.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔨</span>
+      <div class="service-name">Carpentry</div>
+      <p class="service-desc">Doors, handles, locks, timber repairs and custom fit-outs. Solid workmanship every time.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🪟</span>
+      <div class="service-name">Plaster Repairs</div>
+      <p class="service-desc">Hole patching, crack repairs, ceilings and walls. Seamless results ready for painting.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏠</span>
+      <div class="service-name">Tiling</div>
+      <p class="service-desc">Floor and wall tiling for bathrooms, kitchens and living areas. Precise, level and durable.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🌿</span>
+      <div class="service-name">Decking</div>
+      <p class="service-desc">Timber decking construction, repairs and sanding. Outdoor spaces done properly.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💧</span>
+      <div class="service-name">Grouting & Leak Repairs</div>
+      <p class="service-desc">Re-grouting, caulking and leak diagnosis. We stop the problem at the source.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏢</span>
+      <div class="service-name">Real Estate Works</div>
+      <p class="service-desc">End-of-lease and investment property maintenance. Fast turnarounds for property managers.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="section-tag" style="justify-content:center;">Happy Clients</div>
+    <div class="stars">★★★★★</div>
+    <blockquote>
+      "I want to thank you and your team so much for my ensuite and bathroom — <strong>you've done an amazing job and I love it.</strong> It may have stressed us both out but we got there and it's been an absolute pleasure having you both in my home."
+    </blockquote>
+    <div class="testimonial-author">
+      <div class="author-avatar">R</div>
+      <div class="author-info">
+        <div class="name">Renae</div>
+        <div class="location">Bacchus Marsh, VIC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div>
+    <div class="section-tag">Where We Work</div>
+    <div class="section-title">MELBOURNE<br><em>WEST & NORTH</em></div>
+    <p class="section-body">We're based in Melbourne and service the western and northern suburbs. Local knowledge, fast response times.</p>
+    <div class="area-tags">
+      <span class="area-tag">Melton</span>
+      <span class="area-tag">Tarneit</span>
+      <span class="area-tag">Sunshine</span>
+      <span class="area-tag">Keilor</span>
+      <span class="area-tag">Epping</span>
+      <span class="area-tag">Craigieburn</span>
+      <span class="area-tag">Bacchus Marsh</span>
+      <span class="area-tag">& Surrounds</span>
+    </div>
+  </div>
+  <div class="map-placeholder">
+    <div class="map-center-text">
+      <div class="big">VIC</div>
+      <div class="small">Melbourne Metro Coverage</div>
+    </div>
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#c9a84c" stroke-width="0.5">
+      <line x1="0" y1="0" x2="400" y2="300"/><line x1="400" y1="0" x2="0" y2="300"/>
+      <line x1="200" y1="0" x2="200" y2="300"/><line x1="0" y1="150" x2="400" y2="150"/>
+      <line x1="0" y1="75" x2="400" y2="75"/><line x1="0" y1="225" x2="400" y2="225"/>
+      <line x1="100" y1="0" x2="100" y2="300"/><line x1="300" y1="0" x2="300" y2="300"/>
+      <circle cx="200" cy="150" r="80" stroke-dasharray="4 4"/>
+      <circle cx="200" cy="150" r="40"/>
+      <circle cx="200" cy="150" r="8" fill="#c9a84c" stroke="none"/>
+    </svg>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div>
+    <div class="section-tag">Why Madlom</div>
+    <div class="section-title">BUILT ON<br><em>TRUST</em></div>
+    <p class="section-body">Christian Lomani and the Madlom team bring genuine trade skills, reliability and care to every property we work on.</p>
+    <div class="about-points">
+      <div class="about-point">Reliable tradesmen who show up on time and get the job done</div>
+      <div class="about-point">Full-service — one team for multiple trades, one invoice</div>
+      <div class="about-point">Real estate and residential clients both welcome</div>
+      <div class="about-point">No job too small — we take pride in every repair</div>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-label">Quality Work</div>
+      <p class="why-text">Every job finished to a standard we're proud to put our name on.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-label">Honest Pricing</div>
+      <p class="why-text">Free quotes with no hidden costs. You know what you're paying upfront.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-label">Multi-Trade</div>
+      <p class="why-text">Painting, tiling, carpentry and more — all under one roof.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-label">Local Team</div>
+      <p class="why-text">Based in Melbourne's west. We know the area and can get to you fast.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- QUOTE FORM -->
+<section class="quote-section" id="quote">
+  <div class="quote-inner">
+    <div class="quote-header">
+      <div class="section-tag" style="justify-content:center;">No Obligation</div>
+      <div class="section-title" style="text-align:center;">GET YOUR<br><em>FREE QUOTE</em></div>
+      <p class="section-body" style="margin:0 auto;text-align:center;">Fill in the form below and Christian will be in touch within 24 hours to discuss your job.</p>
+    </div>
+
+    <form id="quoteForm" onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fname">Full Name *</label>
+          <input type="text" id="fname" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="04XX XXX XXX" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="suburb">Suburb *</label>
+          <input type="text" id="suburb" placeholder="e.g. Melton, Sunshine..." required>
+        </div>
+        <div class="form-group full">
+          <label>Services Required</label>
+          <div class="services-checkboxes">
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="bathroom"> Bathroom Renovation</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="painting"> Painting</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="carpentry"> Carpentry</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="plaster"> Plaster Repairs</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="tiling"> Tiling</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="decking"> Decking</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="grouting"> Grouting & Caulking</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="leaks"> Leak Repairs</label>
+            <label class="checkbox-item"><input type="checkbox" name="svc" value="realestate"> Real Estate Works</label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="details">Job Details *</label>
+          <textarea id="details" placeholder="Describe the work you need done — include any photos or measurements you have on hand..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="timing">When Do You Need It?</label>
+          <select id="timing">
+            <option value="" disabled selected>Select timeframe</option>
+            <option>ASAP</option>
+            <option>Within 2 weeks</option>
+            <option>Within a month</option>
+            <option>Just planning ahead</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="type">Property Type</label>
+          <select id="type">
+            <option value="" disabled selected>Select type</option>
+            <option>House</option>
+            <option>Apartment / Unit</option>
+            <option>Investment / Rental</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-submit">Send My Quote Request →</button>
+      </div>
+      <p class="form-note">Or call us directly: <a href="tel:0404577361" style="color:var(--gold);text-decoration:none;font-weight:500;">0404 577 361</a></p>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      ✦ &nbsp; Thank you! We'll be in touch within 24 hours.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-strip-left">READY TO START? LET'S TALK.</div>
+  <div class="contact-details">
+    <div class="contact-item">
+      <span class="c-label">Phone</span>
+      <a href="tel:0404577361" class="c-value">0404 577 361</a>
+    </div>
+    <div class="contact-item">
+      <span class="c-label">Email</span>
+      <a href="mailto:Madlommaintenance@outlook.com.au" class="c-value">Madlommaintenance@outlook.com.au</a>
+    </div>
+    <div class="contact-item">
+      <span class="c-label">Area</span>
+      <span class="c-value">Melbourne West & North</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MADLOM PROPERTY MAINTENANCE</div>
+  <div class="footer-copy">© 2025 Madlom Pty Ltd · ABN Available on Request</div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('quoteForm');
+    const msg = document.getElementById('successMsg');
+    form.style.display = 'none';
+    msg.style.display = 'block';
+
+    // Build mailto link as fallback
+    const name = document.getElementById('fname').value;
+    const phone = document.getElementById('phone').value;
+    const suburb = document.getElementById('suburb').value;
+    const details = document.getElementById('details').value;
+    const svcs = [...document.querySelectorAll('input[name="svc"]:checked')].map(c => c.value).join(', ');
+    const subject = encodeURIComponent(`Quote Request from ${name} - ${suburb}`);
+    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nSuburb: ${suburb}\nServices: ${svcs}\n\nDetails:\n${details}`);
+    window.location.href = `mailto:Madlommaintenance@outlook.com.au?subject=${subject}&body=${body}`;
+  }
+</script>
+</body>
+</html>
